@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Microflux Demo</title>
+		<script src="./microflux.min.js"></script>
+	</head>
+	<body>
+		<h1>Type in your input here: <input type="text" id="input"/></h1>
+		<ol>
+			<li><h2>You typed: <span id="message1"></span></h2></li>
+			<li><h2>You typed: <span id="message2"></span></h2></li>
+			<li><h2>You typed: <span id="message3"></span></h2></li>
+		</ol>
+		<script>
+			var demo = MicroFlux({
+				store: {
+					message: ''
+				},
+				actions: {
+					changeMessage: function (newMsg) {
+						this.message = newMsg;
+					}
+				}
+			});
+			demo.on('changeMessage', function (store) {
+				document.getElementById('message1').textContent = store.message;
+			});
+			demo.on('changeMessage', function (store) {
+				document.getElementById('message2').textContent = store.message;
+			});
+			demo.on('changeMessage', function (store) {
+				document.getElementById('message3').textContent = store.message;
+			});
+			var inputElem = document.getElementById('input');
+			inputElem.addEventListener('input', function () {
+				demo.changeMessage(inputElem.value);
+			});
+			//demo.unbindAll('changeMessage');
+		</script>
+	</body>
+</html>
