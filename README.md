@@ -38,6 +38,13 @@ The function is the same as the one declared in `actions`, the event will be aut
 store.unbindAll('changeMessage');
 ```
 If you ever want to unregister all listeners. The first argument is the name of the action to remove all listeners for.
+
+6. Get the state if neccessary
+```javascript
+var theStore = store.getStore();
+```
+
+If for some reason you need to access the store outside of a listener or an action, just call it directly from the MicroFlux instance.
 ## Demo
 There's a demo that takes the input in a textbox and broadcasts it to a bunch of h2's. See `demo.html`
 ## License
