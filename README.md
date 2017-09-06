@@ -26,11 +26,13 @@ store.on('changeMessage', function (store) {
 });
 ```
 The first parameter of `.on` should be the action name to listen to, and the second parameter should be a function that takes the store as an argument.
+
 4. Trigger some events
 ```javascript
 store.changeMessage('hello world');
 ```
 The function is the same as the one declared in `actions`, the event will be automatically triggered after the function is called to any listeners.
+
 5. Unbind if you want to
 ```javascript
 store.unbindAll('changeMessage');
