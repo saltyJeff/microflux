@@ -1,7 +1,7 @@
 # Microflux
-Microflux is a super tiny flux library (407 bytes minified)
+Microflux is a super tiny flux library (~400 bytes minified)
 ## Usage
-1. Include either [microflux.js](https://cdn.rawgit.com/saltyJeff/microflux/adb7eb4c/microflux.js) or [microflux.min.js](https://cdn.rawgit.com/saltyJeff/microflux/adb7eb4c/microflux.min.js) using a `<script src="..."></script>` tag.
+1. Include either [microflux.js](https://cdn.rawgit.com/saltyJeff/microflux/7c7af3f6/microflux.js) or [microflux.min.js](https://cdn.rawgit.com/saltyJeff/microflux/7c7af3f6/microflux.min.js) using a `<script src="..."></script>` tag.
 2. Setup a store:
 ```javascript
  var store = MicroFlux({
