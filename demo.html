@@ -14,7 +14,7 @@
 		<script>
 			var demo = MicroFlux({
 				store: {
-					message: ''
+					message: 'Welcome to my cool demo'
 				},
 				actions: {
 					changeMessage: function (newMsg) {
@@ -22,6 +22,7 @@
 					}
 				}
 			});
+			//add some property bindings
 			demo.on('changeMessage', function (store) {
 				document.getElementById('message1').textContent = store.message;
 			});
@@ -31,10 +32,12 @@
 			demo.on('changeMessage', function (store) {
 				document.getElementById('message3').textContent = store.message;
 			});
+			//setup some triggers
 			var inputElem = document.getElementById('input');
 			inputElem.addEventListener('input', function () {
 				demo.changeMessage(inputElem.value);
 			});
+			//unbind everything: that's no fun
 			//demo.unbindAll('changeMessage');
 		</script>
 	</body>

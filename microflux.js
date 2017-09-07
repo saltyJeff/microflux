@@ -10,10 +10,12 @@ var MicroFlux = function (target) {
 	function toReturn () {
 		var self = this;
 		for(var handler in target.actions) {
-			self[handler] = function () {
-				target.actions[handler].apply(store, arguments);
-				trigger(handler);
-			};
+			self[handler] = (function (evtName) {
+				return function () {
+					target.actions[evtName].apply(store, arguments);
+					trigger(evtName);
+				}
+			})(handler);
 		}
 		self.getStore = function () {
 			return store;
